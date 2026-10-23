@@ -1,0 +1,21 @@
+{
+  "name": "internship-landing",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Лендинг Internship Tracker: Next.js + Payload CMS + Neon + Vercel",
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "dev": "npm run dev -w @tracker/web",
+    "build": "npm run build -w @tracker/web",
+    "start": "npm run start -w @tracker/web",
+    "seed": "npm run seed -w @tracker/web",
+    "typecheck": "npm run typecheck -w @tracker/shared && npm run typecheck -w @tracker/web",
+    "generate:types": "npm run generate:types -w @tracker/web",
+    "generate:importmap": "npm run generate:importmap -w @tracker/web",
+    "dev:landing": "npm run dev -w @tracker/landing",
+    "build:landing": "npm run build -w @tracker/landing"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}
