@@ -13,7 +13,10 @@
     "generate:types": "npm run generate:types -w @tracker/web",
     "generate:importmap": "npm run generate:importmap -w @tracker/web",
     "dev:landing": "npm run dev -w @tracker/landing",
-    "build:landing": "npm run build -w @tracker/landing"
+    "build:landing": "npm run build -w @tracker/landing",
+    "dev:cms": "npm run dev -w @tracker/landing-cms",
+    "build:cms": "npm run build -w @tracker/landing-cms",
+    "generate:cms-types": "npm run generate:types -w @tracker/landing-cms"
   },
   "engines": {
     "node": ">=22.12.0"
