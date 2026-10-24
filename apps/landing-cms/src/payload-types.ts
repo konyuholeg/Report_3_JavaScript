@@ -131,6 +131,26 @@ export interface Page {
   id: number;
   path: string;
   title: string;
+  blocks?:
+    | {
+        anchor?: string | null;
+        badge?: string | null;
+        title: string;
+        subtitle?: string | null;
+        image?: (number | null) | Media;
+        buttons?:
+          | {
+              text: string;
+              link: string;
+              variant?: ('primary' | 'secondary') | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'hero';
+      }[]
+    | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -283,6 +303,29 @@ export interface PayloadMigration {
 export interface PagesSelect<T extends boolean = true> {
   path?: T;
   title?: T;
+  blocks?:
+    | T
+    | {
+        hero?:
+          | T
+          | {
+              anchor?: T;
+              badge?: T;
+              title?: T;
+              subtitle?: T;
+              image?: T;
+              buttons?:
+                | T
+                | {
+                    text?: T;
+                    link?: T;
+                    variant?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+      };
   updatedAt?: T;
   createdAt?: T;
 }

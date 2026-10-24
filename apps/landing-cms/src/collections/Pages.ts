@@ -1,4 +1,5 @@
 import type { CollectionConfig } from 'payload'
+import { pageBlocks } from '../blocks'
 
 export const Pages: CollectionConfig = {
   slug: 'pages',
@@ -19,5 +20,6 @@ export const Pages: CollectionConfig = {
           : 'Адреса має починатися з "/" (латиниця, цифри, дефіси)',
     },
     { name: 'title', type: 'text', label: 'Назва сторінки', required: true },
+    { name: 'blocks', type: 'blocks', label: 'Блоки сторінки', blocks: pageBlocks },
   ],
 }

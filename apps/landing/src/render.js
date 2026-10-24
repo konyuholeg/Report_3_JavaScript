@@ -1,6 +1,8 @@
+import { hero } from "./blocks/hero/hero.js";
+
 // Реєстр блоків: type (blockType з CMS) -> функція, що повертає HTML.
 // Нові блоки додаються сюди по одному.
-const renderers = {};
+const renderers = { hero };
 
 export function renderBlocks(blocks = []) {
   return blocks
