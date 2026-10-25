@@ -1,0 +1,27 @@
+.faq {
+  padding-block: 48px;
+}
+
+.faq__list {
+  display: grid;
+  gap: 12px;
+  max-width: 800px;
+}
+
+.faq__item {
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}
+
+.faq__question {
+  padding: 16px 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.faq__answer {
+  margin: 0;
+  padding: 0 20px 18px;
+  color: var(--color-muted);
+}

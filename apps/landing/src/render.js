@@ -1,8 +1,11 @@
 import { hero } from "./blocks/hero/hero.js";
+import { stats } from "./blocks/stats/stats.js";
+import { features } from "./blocks/features/features.js";
+import { steps } from "./blocks/steps/steps.js";
+import { faq } from "./blocks/faq/faq.js";
+import { cta } from "./blocks/cta/cta.js";
 
-// Реєстр блоків: type (blockType з CMS) -> функція, що повертає HTML.
-// Нові блоки додаються сюди по одному.
-const renderers = { hero };
+const renderers = { hero, stats, features, steps, faq, cta };
 
 export function renderBlocks(blocks = []) {
   return blocks

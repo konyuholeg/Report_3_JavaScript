@@ -132,24 +132,92 @@ export interface Page {
   path: string;
   title: string;
   blocks?:
-    | {
-        anchor?: string | null;
-        badge?: string | null;
-        title: string;
-        subtitle?: string | null;
-        image?: (number | null) | Media;
-        buttons?:
-          | {
-              text: string;
-              link: string;
-              variant?: ('primary' | 'secondary') | null;
-              id?: string | null;
-            }[]
-          | null;
-        id?: string | null;
-        blockName?: string | null;
-        blockType: 'hero';
-      }[]
+    | (
+        | {
+            anchor?: string | null;
+            badge?: string | null;
+            title: string;
+            subtitle?: string | null;
+            image?: (number | null) | Media;
+            buttons?:
+              | {
+                  text: string;
+                  link: string;
+                  variant?: ('primary' | 'secondary') | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'hero';
+          }
+        | {
+            anchor?: string | null;
+            items?:
+              | {
+                  value: string;
+                  label: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'stats';
+          }
+        | {
+            anchor?: string | null;
+            title: string;
+            items?:
+              | {
+                  icon?: string | null;
+                  title: string;
+                  text?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'features';
+          }
+        | {
+            anchor?: string | null;
+            title: string;
+            items?:
+              | {
+                  title: string;
+                  text?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'steps';
+          }
+        | {
+            anchor?: string | null;
+            title: string;
+            items?:
+              | {
+                  question: string;
+                  answer: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'faq';
+          }
+        | {
+            anchor?: string | null;
+            title: string;
+            text?: string | null;
+            buttonText: string;
+            buttonLink: string;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'cta';
+          }
+      )[]
     | null;
   updatedAt: string;
   createdAt: string;
@@ -322,6 +390,77 @@ export interface PagesSelect<T extends boolean = true> {
                     variant?: T;
                     id?: T;
                   };
+              id?: T;
+              blockName?: T;
+            };
+        stats?:
+          | T
+          | {
+              anchor?: T;
+              items?:
+                | T
+                | {
+                    value?: T;
+                    label?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        features?:
+          | T
+          | {
+              anchor?: T;
+              title?: T;
+              items?:
+                | T
+                | {
+                    icon?: T;
+                    title?: T;
+                    text?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        steps?:
+          | T
+          | {
+              anchor?: T;
+              title?: T;
+              items?:
+                | T
+                | {
+                    title?: T;
+                    text?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        faq?:
+          | T
+          | {
+              anchor?: T;
+              title?: T;
+              items?:
+                | T
+                | {
+                    question?: T;
+                    answer?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        cta?:
+          | T
+          | {
+              anchor?: T;
+              title?: T;
+              text?: T;
+              buttonText?: T;
+              buttonLink?: T;
               id?: T;
               blockName?: T;
             };

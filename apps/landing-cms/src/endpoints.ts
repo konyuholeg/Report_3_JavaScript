@@ -1,13 +1,9 @@
 import type { Endpoint } from 'payload'
 
 const CMS_URL = process.env.CMS_URL || 'http://localhost:3001'
-
-// Фронтенд на іншому origin, тому відносні URL медіа робимо абсолютними.
 function absoluteUrl(url: string): string {
   return /^https?:\/\//i.test(url) ? url : new URL(url, CMS_URL).toString()
 }
-
-// Прибираємо службові поля Payload і віддаємо фронтенду плоский блок { type, ... }.
 function cleanBlock(block: Record<string, any>) {
   const { id, blockName, blockType, image, ...rest } = block
   const clean: Record<string, any> = { type: blockType, ...rest }

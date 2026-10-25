@@ -1,0 +1,48 @@
+.steps {
+  padding-block: 48px;
+}
+
+.steps__list {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+
+.step {
+  position: relative;
+  padding: 24px;
+  padding-top: 56px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  counter-increment: step;
+}
+
+.step::before {
+  content: counter(step);
+  position: absolute;
+  top: 16px;
+  left: 24px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-on-dark);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.step__title {
+  font-size: 1.1rem;
+}
+
+.step__text {
+  margin: 8px 0 0;
+  color: var(--color-muted);
+}
