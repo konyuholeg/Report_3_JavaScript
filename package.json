@@ -16,6 +16,7 @@
     "build:landing": "npm run build -w @tracker/landing",
     "dev:cms": "npm run dev -w @tracker/landing-cms",
     "build:cms": "npm run build -w @tracker/landing-cms",
+    "seed:cms": "npm run seed -w @tracker/landing-cms",
     "generate:cms-types": "npm run generate:types -w @tracker/landing-cms"
   },
   "engines": {
