@@ -46,3 +46,32 @@ cd ../.. && npm run dev                    # http://localhost:3000, адмінк
 ## Оновлення типів
 
 Після зміни колекцій: `npm run generate:types`, `npm run generate:importmap`, `npx payload migrate:create <name>` (з каталогу `apps/web`).
+
+## Новий лендінг (Vite + Payload CMS)
+
+```
+apps/landing        Vite-фронтенд (порт 5173), блоки hero, stats, features, steps, faq, cta
+apps/landing-cms    Payload CMS (порт 3001), ендпоінти GET /api/common та GET /api/page?path=
+```
+
+Окрема база Postgres (не та, що в `apps/web`).
+
+Локально:
+
+```bash
+npm install
+cp apps/landing-cms/.env.example apps/landing-cms/.env     # DATABASE_URL, PAYLOAD_SECRET, SEED_*
+cp apps/landing/.env.example apps/landing/.env
+npm run migrate:cms
+npm run seed:cms
+npm run dev:cms        # http://localhost:3001/admin
+npm run dev:landing    # http://localhost:5173
+```
+
+Деплой на Vercel (два проєкти з одного репозиторію):
+
+1. `landing-cms`: Root Directory `apps/landing-cms`, Framework Next.js. Змінні: `DATABASE_URL`, `PAYLOAD_SECRET`, `CMS_URL`, `FRONTEND_URL`. Build виконує `payload migrate`, потім `next build`.
+2. `landing`: Root Directory `apps/landing`, Framework Vite. Змінна: `VITE_API_URL` (адреса CMS).
+3. Один раз виконайте `npm run seed:cms` з `.env`, що вказує на базу Neon.
+
+Зображення в блоці Hero на Vercel не завантажуються (немає сховища файлів), тому в production hero без картинки.
