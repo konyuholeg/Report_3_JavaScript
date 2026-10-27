@@ -18,11 +18,11 @@ async function start() {
 
     app.innerHTML = `
       ${header(settings)}
-      <main>${renderBlocks(page.blocks)}</main>
+      <main class="container">${renderBlocks(page.blocks)}</main>
       ${footer(settings)}
     `;
   } catch (error) {
-    app.innerHTML = `<p class="state-error">Не вдалося завантажити сторінку: ${esc(error.message)}</p>`;
+    app.innerHTML = `<div class="container"><p class="state-error">Не вдалося завантажити сторінку: ${esc(error.message)}</p></div>`;
   }
 }
 
