@@ -169,7 +169,23 @@ export interface Page {
             title: string;
             items?:
               | {
-                  icon?: string | null;
+                  icon?:
+                    | (
+                        | 'search'
+                        | 'briefcase'
+                        | 'puzzle'
+                        | 'chart'
+                        | 'clock'
+                        | 'check'
+                        | 'shield'
+                        | 'user'
+                        | 'bell'
+                        | 'zap'
+                        | 'list'
+                        | 'globe'
+                        | 'star'
+                      )
+                    | null;
                   title: string;
                   text?: string | null;
                   id?: string | null;

@@ -1,5 +1,6 @@
 import "./features.css";
 import { esc } from "../../lib/html.js";
+import { icon as renderIcon } from "../../lib/icons.js";
 
 export function features({ anchor, title, items = [] }) {
   return `
@@ -10,7 +11,7 @@ export function features({ anchor, title, items = [] }) {
           .map(
             ({ icon, title, text }) => `
           <article class="feature">
-            ${icon ? `<span class="feature__icon">${esc(icon)}</span>` : ""}
+            ${renderIcon(icon) ? `<span class="feature__icon">${renderIcon(icon)}</span>` : ""}
             <h3 class="feature__title">${esc(title)}</h3>
             ${text ? `<p class="feature__text">${esc(text)}</p>` : ""}
           </article>`,

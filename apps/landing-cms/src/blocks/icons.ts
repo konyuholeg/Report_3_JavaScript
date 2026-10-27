@@ -1,0 +1,15 @@
+export const iconOptions = [
+  { label: 'Пошук', value: 'search' },
+  { label: 'Портфель (вакансії)', value: 'briefcase' },
+  { label: 'Пазл', value: 'puzzle' },
+  { label: 'Графік', value: 'chart' },
+  { label: 'Годинник', value: 'clock' },
+  { label: 'Галочка', value: 'check' },
+  { label: 'Щит', value: 'shield' },
+  { label: 'Користувач', value: 'user' },
+  { label: 'Дзвіночок', value: 'bell' },
+  { label: 'Блискавка', value: 'zap' },
+  { label: 'Список', value: 'list' },
+  { label: 'Глобус', value: 'globe' },
+  { label: 'Зірка', value: 'star' },
+]

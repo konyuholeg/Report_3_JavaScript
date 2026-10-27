@@ -1,4 +1,5 @@
 import type { Block } from 'payload'
+import { iconOptions } from './icons'
 
 export const Features: Block = {
   slug: 'features',
@@ -12,7 +13,7 @@ export const Features: Block = {
       label: 'Переваги',
       minRows: 1,
       fields: [
-        { name: 'icon', type: 'text', label: 'Іконка (емодзі)' },
+        { name: 'icon', type: 'select', label: 'Іконка', options: iconOptions },
         { name: 'title', type: 'text', label: 'Назва', required: true },
         { name: 'text', type: 'textarea', label: 'Опис' },
       ],

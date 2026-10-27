@@ -23,7 +23,7 @@
   margin-bottom: 14px;
   border-radius: 10px;
   background: var(--color-accent-soft);
-  font-size: 1.4rem;
+  color: var(--color-accent);
 }
 
 .feature__title {
